@@ -7,7 +7,7 @@
 <div class="note" *ngFor="let note of getSortedNotes(notes); index as i">
   <h1>{{ note.title }}</h1>
   <p>{{ note.content }}</p>
-  <p>{{ note.date|timeAgo }}</p>
+  <p>{{ note.date | timeAgo }}</p>
   <button *ngIf="!note.isDone" (click)="done(i)">Done</button>
   <button (click)="delete(i)">Delete</button>
 </div>
