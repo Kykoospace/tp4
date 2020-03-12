@@ -46,7 +46,7 @@ export class AppComponent {
 
   getSortedNotes(notes: Note[]) {
     return notes.sort(
-      (a, b) => b.date.getTime() - a.date.getTime()
+      (a, b) => a.date.getTime() - b.date.getTime()
     );
   }
 }
