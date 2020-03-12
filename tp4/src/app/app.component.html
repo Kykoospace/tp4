@@ -1,0 +1,13 @@
+<form [formGroup]="noteForm">
+  <input type="text" placeholder="Titre" formControlName="title">
+  <textarea id="" cols="30" rows="10" placeholder="Note..." formControlName="content"></textarea>
+  <button type="submit" (click)="onSubmit()">Enregistrer</button>
+</form>
+<hr>
+<div class="note" *ngFor="let note of getSortedNotes(notes); index as i">
+  <h1>{{ note.title }}</h1>
+  <p>{{ note.content }}</p>
+  <p>{{ note.date }}</p>
+  <button *ngIf="!note.isDone" (click)="done(i)">Done</button>
+  <button (click)="delete(i)">Delete</button>
+</div>
